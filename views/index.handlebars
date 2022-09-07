@@ -1,0 +1,103 @@
+<body class="back">
+    <div class="containe back">
+        <br>
+
+        <h1 class="center">MAKE YOUR PLAN</h1>
+        {{#if messages.info}}
+        <div class="massage" style="color: red; padding-left:37% ">
+            <h1> {{messages.info}}</h1>
+        </div>
+        {{/if}}
+
+        <br>
+
+        {{!-- <table>
+            <tr>
+                <th>plan</th>
+                <th>sms</th>
+                <th>calls</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+        </table> --}}
+
+        <form action="/plan" method="POST" class="input-class">
+            <div class="filter">
+
+                <div style="font-size:50px;">
+
+                    <input type="text" name="names" class="regNumberEnterd" placeholder="Enter your name"
+                        style="font-size:20px ;">
+
+                </div>
+
+                <div style="padding-right:100px">
+
+                    {{!-- <button class="addRegNumber btn blue" type="submit">ADD PLAN</button> --}}
+
+                </div>
+
+
+            </div>
+            {{!--
+         </form> --}}
+         {{!-- <form action="/filter" method="post"> --}}
+            <div class="filter">
+                <dir>
+                    <h2 style="padding-right: 30px;">Select plan Bellow</h2>
+                </dir>
+                <div>
+                    <select name="plan" class="reg">
+                        <option value="" disabled selected hidden>SELECT PLAN</option>
+                        <option value="SMS100" class="dropdown">SMS 100</option>
+                        <option value="CALL100" class="dropdown">CALL 100</option>
+                        <option value="text-me" class="dropdown">text-me</option>
+                    
+
+
+                    </select>
+                </div>
+                <br>
+                <button type="submit" class="clearRegNumber">Alocate</button>
+            </div>
+        </form>
+
+        <br></br>
+
+        <div class="regNumbers"
+            style="margin-left: 600px; margin-right:600px; background-color:lightblue; height:fit-content; border-radius: 25px; border: 2px solid #609; ">
+
+
+            {{#each regNumbers}}
+            <div class="regNumberStyle">{{this.regnumber}}</div>
+            {{/each}}
+
+
+        </div>
+
+
+
+        {{!-- <br><br>
+
+
+        <div style="margin-left: 40%; margin-right:40%; margin-top:25px; ">
+            <a href="/clear">
+                <button class="clearRegNumbers" type="submit">CLEAR ALL DATA</button>
+            </a>
+        </div>
+
+
+        <br> - --}}
+
+    </div>
+    <script src="timeout.js"></script>
+</body>
